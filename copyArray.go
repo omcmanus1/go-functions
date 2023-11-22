@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// Go passes by values for int and string
+// but arrays and maps are mutated unless you copy
 func CopyArray[T any](arr []T) []T {
 	arrCopy := make([]T, len(arr))
 	copy(arrCopy, arr)

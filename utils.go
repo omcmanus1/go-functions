@@ -7,10 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-type Primitives interface {
-	bool | string | int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr
-}
-
 // compare output with expected value
 // return error if not equal
 func CheckGotWantPrimitive[P Primitives](t testing.TB, got, want P) {

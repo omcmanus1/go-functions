@@ -2,11 +2,14 @@ package main
 
 // implement set data structure in Go
 // (not available natively)
-func Set() map[string]struct{} {
-	duplicatesArr := []string{"hello", "hello", "hi", "hi", "not hi", "still not hi"}
-	set := map[string]struct{}{}
-	for _, val := range duplicatesArr {
-		set[val] = struct{}{}
+func Set(duplicatesArr []string) []string {
+	set := make(map[string]struct{})
+	for _, item := range duplicatesArr {
+		set[item] = struct{}{}
 	}
-	return set
+	arr := make([]string, 0, len(set))
+	for key := range set {
+		arr = append(arr, key)
+	}
+	return arr
 }
